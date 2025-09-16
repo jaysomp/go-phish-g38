@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Escar Europe 2025</title>
+  <meta name="description" content="Official site for the Escar Europe 2025 Security Conference." />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #111827;
+      --muted: #94a3b8;
+      --text: #e5e7eb;
+      --primary: #3b82f6;
+      --accent: #34d399;
+      --danger: #f97066;
+      --ring: rgba(96,165,250,.35);
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+    }
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    header {
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      box-shadow: 0 8px 24px rgba(0,0,0,.35);
+    }
+    .title {
+      font-weight: 700;
+      letter-spacing: .2px;
+      font-size: 20px;
+    }
+    .hero {
+      padding: 60px 20px;
+      display: grid;
+      gap: 20px;
+      text-align: center;
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      border-radius: 20px;
+      margin-top: 20px;
+      box-shadow: 0 12px 40px rgba(0,0,0,.4);
+    }
+    .hero h1 {
+      font-size: 36px;
+      margin: 0;
+      font-weight: 800;
+    }
+    .hero p {
+      margin: 0 auto;
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 640px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(96,165,250,.14);
+      color: #bfdbfe;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      margin-top: 24px;
+    }
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.02));
+      border: 1px solid rgba(255,255,255,.06);
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 40px rgba(0,0,0,.35);
+    }
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .muted {
+      color: var(--muted);
+    }
+    .cta, .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-weight: 700;
+      border: 0;
+      padding: 12px 18px;
+      border-radius: 12px;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 15px;
+      transition: transform 0.15s ease;
+    }
+    .cta {
+      background: linear-gradient(135deg, var(--primary), #60a5fa);
+      color: #fff;
+      box-shadow: 0 10px 22px rgba(96,165,250,.35);
+    }
+    .cta:hover {
+      transform: translateY(-2px);
+    }
+    .btn {
+      background: var(--accent);
+      color: #052e1a;
+      box-shadow: 0 10px 22px rgba(52,211,153,.25);
+    }
+    .btn.secondary {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid rgba(255,255,255,.14);
+      box-shadow: none;
+    }
+    section {
+      margin: 36px 0;
+    }
+    section h2 {
+      margin: 0 0 12px;
+      font-size: 22px;
+      font-weight: 700;
+    }
+    form {
+      display: grid;
+      gap: 12px;
+      margin-top: 8px;
+    }
+    input, select, textarea {
+      width: 100%;
+      box-sizing: border-box;
+      background: var(--panel);
+      color: var(--text);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 10px;
+      padding: 10px 12px;
+      outline: none;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px var(--ring);
+    }
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      margin-top: 12px;
+    }
+    footer {
+      margin-top: 50px;
+      padding: 20px;
+      background: #111827;
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    footer .logo {
+      margin: 0 auto 8px;
+    }
+    .hidden {
+      display: none !important;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap brand">
+      <div class="logo" aria-hidden="true"></div>
+      <div>
+        <div class="title">Escar Europe 2025</div>
+        <small class="muted">Hybrid • November 5th to 6th • Frankfurt, Germany</small>
+      </div>
+    </div>
+  </header>
+  <main class="wrap">
+    <section class="hero" id="top">
+      <span class="badge">Call for participation open</span>
+      <h1>Join the World's Leading Automotive Cyber Security Conference</h1>
+      <p>Three tracks. Hands-on sessions. Peer-reviewed talks. Virtual attendance available.</p>
+      <div>
+        <a href="#register" class="cta">Register now</a>
+      </div>
+    </section>
+
+    <section class="grid" aria-label="Highlights">
+      <div class="card">
+        <h3>Tracks</h3>
+        <p class="muted">
+          Cyber Security Management Systems, Offensive Security, AI for Security,
+          Security in Software-Defined Vehicles, Automotive Security Engineering.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Emerging Topics</h3>
+        <p class="muted">Security Technologies for Systems and Subsystems, Future Security Applications for Automotive Systems.</p>
+      </div>
+      <div class="card">
+        <h3>Speakers</h3>
+        <p class="muted">Experts from PlaxidityX, CarByte, Dissecto and more.</p>
+      </div>
+      <div class="card">
+        <h3>Format</h3>
+        <p class="muted">Hybrid delivery with on-site sessions and a high quality virtual stream.</p>
+      </div>
+    </section>
+
+    <section id="register">
+      <h2>Registration of interest</h2>
+      <div id="form-wrap">
+        <form id="signup" action="#" method="post" novalidate>
+          <div class="row">
+            <div>
+              <input id="name" name="name" placeholder="First Last" autocomplete="off" />
+            </div>
+            <div>
+              <input id="email" name="email" type="email" placeholder="you@example.edu" autocomplete="off" />
+            </div>
+          </div>
+          <div class="row">
+            <div>
+              <input id="affil" name="affil" placeholder="Your organization" autocomplete="off" />
+            </div>
+            <div>
+              <select id="track" name="track">
+                <option>Cyber Security Management Systems</option>
+                <option>Offensive Security</option>
+                <option>AI for Security</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <textarea id="notes" name="notes" rows="3" placeholder="Anything we should know"></textarea>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <div id="thanks" class="hidden">
+      <div class="card">
+        <h3>Thank you for your interest</h3>
+        <div class="actions">
+          <a class="cta" href="#top">Back to top</a>
+          <a class="btn secondary" href="#" id="downloadCFP">Download CFP (PDF)</a>
+        </div>
+      </div>
+    </div>
+
+    <section id="payment">
+      <h2>Payment</h2>
+      <div class="card">
+        <h3 style="margin-top:0">Conference registration</h3>
+        <p class="muted" style="margin:6px 0 14px">
+          General Admission • Hybrid Access • Early registration €900
+        </p>
+        <div class="row">
+          <div>
+            <input value="" placeholder="Cardholder name" />
+          </div>
+          <div>
+            <input value="" placeholder="Card number" />
+          </div>
+        </div>
+        <div class="row">
+          <div>
+            <input value="" placeholder="Expiration (MM/YYYY)" />
+          </div>
+          <div>
+            <input value="" placeholder="CVC" />
+          </div>
+        </div>
+        <div class="row">
+          <div>
+            <input value="" placeholder="Billing Zip/Postal code" />
+          </div>
+          <div>
+            <input value="" placeholder="Country" />
+          </div>
+        </div>
+        <div class="actions">
+          <button class="btn" id="mockPay" type="button">Pay Now</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="actions">
+      <button id="submit" class="btn" type="button">Register Interest</button>
+      <button class="btn secondary" type="button" id="addToCal">Add keynote to calendar</button>
+    </div>
+
+    <section>
+      <h2>Code of conduct</h2>
+      <p class="muted">We are committed to a friendly, safe, and welcoming environment for all participants.</p>
+    </section>
+    <footer>
+      <div class="logo" aria-hidden="true"></div>
+      <div>Contact: <a href="mailto:ops@escar-europe.org">ops@escar-europe.org</a></div>
+    </footer>
+  </main>
+  <script>
+    const form = document.getElementById('signup');
+    const thanks = document.getElementById('thanks');
+    document.getElementById('submit').addEventListener('click', function () {
+      document.querySelectorAll('main > section, .actions').forEach(el => {
+        if (!el.contains(thanks)) el.classList.add('hidden');
+      });
+      thanks.classList.remove('hidden');
+      try { thanks.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (_) {}
+    });
+
+    // Minimal ICS download for Escar Europe keynote
+    document.getElementById('addToCal').addEventListener('click', function() {
+      const ics = [
+        'BEGIN:VCALENDAR',
+        'VERSION:2.0',
+        'PRODID:-//Escar Europe 2025//EN',
+        'CALSCALE:GREGORIAN',
+        'METHOD:PUBLISH',
+        'BEGIN:VEVENT',
+        'UID:' + Date.now() + '@escar-europe-2025',
+        'DTSTAMP:20250901T090000Z',
+        'DTSTART:20251105T090000Z',
+        'DTEND:20251105T100000Z',
+        'SUMMARY:Escar Europe 2025 Keynote',
+        'DESCRIPTION:Placeholder calendar entry for realism. Academic simulation only.',
+        'LOCATION:Frankfurt am Main + Virtual',
+        'END:VEVENT',
+        'END:VCALENDAR'
+      ].join('\r\n');
+      const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'Escar-Europe-2025-Keynote.ics';
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(() => { URL.revokeObjectURL(url); a.remove(); }, 0);
+    });
+
+    // Provide a simple CFP PDF download
+    document.getElementById('downloadCFP').addEventListener('click', function(e) {
+      e.preventDefault();
+      const pdf = (
+        '%PDF-1.4\n' +
+        '1 0 obj<</Type/Catalog/Pages 2 0 R>>endobj\n' +
+        '2 0 obj<</Type/Pages/Count 1/Kids[3 0 R]>>endobj\n' +
+        '3 0 obj<</Type/Page/Parent 2 0 R/MediaBox[0 0 612 792]/Contents 4 0 R/Resources<</Font<</F1 5 0 R>>>>>>endobj\n' +
+        '4 0 obj<</Length 83>>stream\n' +
+        'BT /F1 18 Tf 72 720 Td (Escar Europe 2025 Call for Participation) Tj ET\n' +
+        'endstream endobj\n' +
+        '5 0 obj<</Type/Font/Subtype/Type1/Name/F1/BaseFont/Helvetica>>endobj\n' +
+        'xref\n0 6\n0000000000 65535 f \n0000000010 00000 n \n0000000059 00000 n \n0000000114 00000 n \n0000000275 00000 n \n0000000438 00000 n \n' +
+        'trailer<</Size 6/Root 1 0 R>>\nstartxref\n520\n%%EOF'
+      );
+      const blob = new Blob([pdf], { type: 'application/pdf' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'Escar-Europe-2025-CFP.pdf';
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(() => { URL.revokeObjectURL(url); a.remove(); }, 0);
+    });
+
+    // Payment button mock (static only)
+    document.getElementById('mockPay').addEventListener('click', function () {
+      alert("Payment step is simulated only. No real transaction is processed.");
+    });
+  </script>
+</body>
+</html>
